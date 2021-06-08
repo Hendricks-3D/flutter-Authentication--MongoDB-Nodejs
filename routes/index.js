@@ -16,9 +16,11 @@ router.get('/dashboard',(request,response)=>{
 router.post('/addUser',actions.addNew)
 
 //@desc authenticate user
-//@router get /authenticateUser
-router.post('/authenticateUser',actions.authenticate)
+//@router POST /authenticateUser
+router.post('/authenticateUser',actions.authenticate);
 
-
+//@desc get user info
+//@router get 
+router.get('/getUser',actions.getUser);
 
 module.exports = router;

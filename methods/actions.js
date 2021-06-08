@@ -61,6 +61,18 @@ var functions = {
     },
 
 
+    getUser:function(req,res){
+        if(req.headers.authorization && req.headers.authorization.split(' ')[0]==='Bearer'){
+            var token = req.headers.authorization.split(' ')[1];
+            var decodedToken = jwt.decode(token,config.secret)
+
+            return res.json({success:true,message:'Hello '+decodedToken.name});
+        }else{
+            return res.json({success:false,message:'No headers'});
+        }
+    }
+
+
 }
 
 
