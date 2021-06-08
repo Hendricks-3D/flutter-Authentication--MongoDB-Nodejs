@@ -44,8 +44,8 @@ userSchema.pre('save',function(next){
 
 
 //Method that will  compare the hash password and the  given password-----------------------------
-userSchema.methods.comparePassword = function(pass, callback){
-    bcrypt.compare(pass,this.password,function(err,isMatch){
+userSchema.methods.comparePassword = function(passw, callback){
+    bcrypt.compare(passw,this.password,function(err,isMatch){
         if(err){
             return callback(err);
         }
