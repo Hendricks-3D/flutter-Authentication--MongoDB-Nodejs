@@ -1,9 +1,6 @@
 # flutter-Authentication--MongoDB-Nodejs
-
-how to run
-
-run npm i in terminal
-
+run npm i
+---
 npm start 
 or
 npm run  dev 
