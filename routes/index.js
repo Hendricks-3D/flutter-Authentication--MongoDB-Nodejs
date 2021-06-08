@@ -1,9 +1,24 @@
 const express = require('express');
-//const acions = require('../methods/actions');
+const actions = require('../methods/actions');
 const  router = express.Router();
 
 router.get('/',(request,response)=>{
-    response.send("working");
+    response.send("home page");
 });
 
-module.exports = routes;
+router.get('/dashboard',(request,response)=>{
+    response.send("dashboard");
+});
+
+
+//@desc Add new user
+//@route POST /adduser
+router.post('/addUser',actions.addNew)
+
+//@desc authenticate user
+//@router get /authenticateUser
+router.post('/authenticateUser',actions.authenticate)
+
+
+
+module.exports = router;
